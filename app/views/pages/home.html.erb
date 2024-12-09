@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>NetflixLike</h1>
+<p>Browse movies and add them to your wishlist!</p>
+
+<% @movies %>
+
+
+<% @movies.each do |movie| %>
+  <div class="card-product">
+  <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/> -->
+  <div class="card-product-infos">
+    <h2><%= movie.title %></h2>
+    <%= link_to "Show details", movie_path(movie) %>
+  </div>
+</div>
+<% end %>

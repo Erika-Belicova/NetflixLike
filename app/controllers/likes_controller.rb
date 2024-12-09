@@ -1,4 +1,4 @@
-class LikeController < ApplicationController
+class LikesController < ApplicationController
   before_action :set_wishlist, only: [:index, :new, :create, :destroy]
   before_action :set_movie, only: [:new, :create]
 

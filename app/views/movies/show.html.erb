@@ -1,0 +1,14 @@
+
+<h1><%= @movie.title %></h1>
+<h2>Here is all you need to know about this movie!</h2>
+
+<h3>Director:<h3>
+<p><%= @movie.director %></p>
+
+<h3>Actors:<h3>
+<p><%= @movie.actors %></p>
+
+<h3>Summary:<h3>
+<p><%= @movie.summary%></p>
+
+<%= link_to "Add #{@movie.title} to my wishlist" %>
