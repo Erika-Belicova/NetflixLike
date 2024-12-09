@@ -11,4 +11,5 @@
 <h3>Summary:<h3>
 <p><%= @movie.summary%></p>
 
-<%= link_to "Add #{@movie.title} to my wishlist" %>
+<%= link_to "Return to homepage", root_path %>
+<%= link_to "Add #{@movie.title} to my wishlist",  new_like_path(@movie.id) %>

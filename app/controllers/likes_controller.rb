@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   before_action :set_wishlist, only: [:index, :new, :create, :destroy]
-  before_action :set_movie, only: [:new, :create]
+  before_action :set_movie
 
   def index
     @likes = like.all
@@ -15,6 +15,7 @@ class LikesController < ApplicationController
     @like.wishlist = @wishlist
     @like.movie = @movie
     @like.save
+    redirect_to likes_path
   end
 
   def destroy
@@ -26,7 +27,7 @@ class LikesController < ApplicationController
   private
 
   def set_wishlist
-    @wishlist = Wishlist.find(params[:id])
+    @wishlist = current_user.wishlist
   end
 
   def set_movie

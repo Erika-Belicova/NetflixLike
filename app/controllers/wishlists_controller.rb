@@ -1,6 +1,6 @@
-class WishlistController < ApplicationController
+class WishlistsController < ApplicationController
   def show
-    @wishlist = Wishlist.find(params[:id])
+    @wishlist = current_user.wishlist
   end
 
   def new
@@ -11,10 +11,5 @@ class WishlistController < ApplicationController
     @wishlist = Wishlist.new
     @wishlist.user = current_user
     @wishlist.save
-  end
-
-  def destroy
-    @wishlist = Wishlist.find(params[:id])
-    @wishlist.destroy
   end
 end

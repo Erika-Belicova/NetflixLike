@@ -1,8 +1,7 @@
 <h1>NetflixLike</h1>
 <p>Browse movies and add them to your wishlist!</p>
 
-<% @movies %>
-
+<%= link_to "My Wishlist", wishlist_path(@user.wishlist) %>
 
 <% @movies.each do |movie| %>
   <div class="card-product">
